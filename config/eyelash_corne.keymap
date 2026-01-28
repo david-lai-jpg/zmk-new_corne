@@ -246,7 +246,7 @@
 &kp ESC     &trans  &trans  &trans     &trans  &trans                               &trans                &trans        &trans  &trans      &trans    &trans     &trans
 &trans     &kp A  &kp S  &kp D     &kp F  &trans                     &trans  &trans  &trans  &trans        &kp J  &kp K      &kp L    &kp SEMI  &trans
  &trans  &trans  &trans  &trans     &trans  &trans        &kp C_PP              &trans              &trans        &trans  &trans  &trans  &trans  &trans
-                         &trans  &trans  &trans                                              &trans  &trans  &mouse_lt_exit 0 0
+                         &trans  &trans  &trans                                              &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
