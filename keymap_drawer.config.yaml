@@ -110,7 +110,7 @@ draw_config:
   use_local_cache: true
 
 parse_config:
-  mark_alternate_layer_activators: true
+  mark_alternate_layer_activators: false
   sticky_label: $$mdi:gesture-tap-hold$$
   trans_legend:
     tap: $$mdi:transfer$$

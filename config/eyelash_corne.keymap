@@ -37,20 +37,27 @@
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
 
-        td_bspc_num: td_bspc_num {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Backspace/Toggle NUMBER";
-            #binding-cells = <0>;
+        num_lt: num_lt {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Backspace/NUMBER Layer";
+            #binding-cells = <2>;
+            flavor = "balanced";
             tapping-term-ms = <200>;
-            bindings = <&kp BSPC>, <&num_tog_enter>;
+            bindings = <&mo>, <&kp>;
         };
 
-        td_bspc_num_exit: td_bspc_num_exit {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Backspace/Exit NUMBER";
+        lbrc_morph: lbrc_morph {
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp BSPC>, <&num_tog_exit>;
+            bindings = <&kp LBRC>, <&kp LBKT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        rbrc_morph: rbrc_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RBRC>, <&kp RBKT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         hml: home_row_mod_left {
@@ -209,7 +216,7 @@
  &kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                               &kp F3                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp EQUAL
 &td0       &hml LCTRL A  &hml LALT S  &hml LGUI D     &hml LSHFT F  &kp G                     &kp F1  &kp F12  &kp F2  &kp H        &hmr RSHFT J  &hmr RGUI K      &hmr RALT L    &hmr RCTRL SEMI  &kp SQT
  &kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp C_PP              &kp F4              &kp N        &kp M  &kp COMMA  &kp BSLH  &kp FSLH  &kp BSLH
-                         &kp LALT  &kp LGUI  &kp SPACE                                               &fn_lt_enter 0 ENTER  &td_bspc_num  &mouse_lt_enter 0 0
+                         &kp LALT  &kp LGUI  &kp SPACE                                               &fn_lt_enter 0 ENTER  &num_lt 1 BSPC  &mouse_lt_enter 0 0
             >;
 
              sensor-bindings = <&scroll_encoder>;
@@ -218,21 +225,21 @@
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&kp ESC    &trans  &kp N7  &kp N8  &kp N9  &kp N0                                  &kp F3                     &trans        &trans  &kp UP  &trans     &trans  &kp MINUS
-&trans     &trans  &kp N4  &kp N5  &kp N6  &kp GRAVE                   &kp F1  &trans       &kp F2  &kp LBRC      &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-&trans     &trans  &kp N1  &kp N2  &kp N3  &kp F12      &kp C_PP                    &kp F4                   &kp RBRC      &trans  &trans  &trans  &trans  &trans
-                                  &trans  &trans  &trans                                                             &trans        &td_bspc_num_exit  &trans
+&kp ESC    &kp MINUS  &kp N7  &kp N8  &kp N9  &kp N0                                  &kp F3                     &trans        &trans  &kp UP  &trans     &trans  &kp MINUS
+&trans     &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp GRAVE                   &kp F1  &trans       &kp F2  &lbrc_morph      &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+&trans     &trans  &kp N1  &kp N2  &kp N3  &kp F12      &kp C_PP                    &kp F4                   &rbrc_morph      &trans  &trans  &trans  &trans  &trans
+                                  &trans  &trans  &trans                                                             &trans        &trans  &trans
             >;
 
             sensor-bindings = <&volume_encoder>;
         };
 
         layer_3 {
-            display-name = "Fn";
+            display-name = "FN";
             bindings = <
- &kp ESC    &trans  &kp F7  &kp F8  &kp F9  &trans                                  &kp F3                     &trans        &trans  &kp UP  &trans  &trans     &trans
- &trans     &kp F11  &kp F4  &kp F5  &kp F6  &kp GRAVE                   &kp F1  &trans       &kp F2  &kp LBRC      &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
- &rgb_ug RGB_TOG     &kp F10  &kp F1  &kp F2  &kp F3  &kp F12      &kp C_PP                    &kp F4                   &kp RBRC      &trans  &trans  &trans  &trans  &trans
+ &kp ESC    &trans  &kp F7  &kp F8  &kp F9  &trans                                  &kp F3                     &trans        &trans  &kp UP  &trans  &trans     &kp MINUS
+ &trans     &kp F11  &kp F4  &kp F5  &kp F6  &kp GRAVE                   &kp F1  &trans       &kp F2  &lbrc_morph      &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+ &rgb_ug RGB_TOG     &kp F10  &kp F1  &kp F2  &kp F3  &kp F12      &kp C_PP                    &kp F4                   &rbrc_morph      &trans  &trans  &trans  &trans  &trans
                                     &trans  &trans  &trans                                                             &trans        &trans  &trans
             >;
 
@@ -242,10 +249,10 @@
         mouse_layer {
             display-name = "MOUSE";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                               &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp EQUAL
-&trans     &kp A  &kp S  &kp D     &kp F  &kp G                     &kp LEFT  &kp F3  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
- &kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp C_PP              &kp DOWN              &kp N        &kp M  &kp COMMA  &trans  &kp FSLH  &kp BSLH
-                         &kp LALT  &kp LGUI  &kp SPACE                                              &trans  &trans  &mouse_lt_exit 0 0
+&kp ESC     &trans  &trans  &trans     &trans  &trans                               &kp UP                &trans        &trans  &trans      &trans    &trans     &trans
+&trans     &kp A  &kp S  &kp D     &kp F  &trans                     &kp LEFT  &kp F3  &kp RIGHT  &trans        &kp J  &kp K      &kp L    &kp SEMI  &trans
+ &trans  &trans  &trans  &trans     &trans  &trans        &kp C_PP              &kp DOWN              &trans        &trans  &trans  &trans  &trans  &trans
+                         &trans  &trans  &trans                                              &trans  &trans  &mouse_lt_exit 0 0
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
@@ -253,9 +260,9 @@
         symbols_layer {
             display-name = "SYMBOLS";
             bindings = <
-&kp ESC    &trans  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR                                  &kp F3                     &trans        &trans  &kp UP  &trans     &trans  &kp MINUS
-&trans     &trans  &kp DLLR  &kp PRCNT  &kp CARET  &kp GRAVE                   &kp F1  &trans       &kp F2  &kp LBRC      &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-&trans     &trans  &kp EXCL  &kp AT     &kp HASH  &kp F12      &kp C_PP                    &kp F4                   &kp RBRC      &trans  &trans  &trans  &trans  &trans
+&kp ESC    &kp MINUS  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR                                  &kp F3                     &trans        &trans  &kp UP  &trans     &trans  &kp MINUS
+&trans     &kp EQUAL  &kp DLLR  &kp PRCNT  &kp CARET  &kp GRAVE                   &kp F1  &trans       &kp F2  &lbrc_morph      &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+&trans     &trans  &kp EXCL  &kp AT     &kp HASH  &kp F12      &kp C_PP                    &kp F4                   &rbrc_morph      &trans  &trans  &trans  &trans  &trans
                                    &trans  &trans  &trans                                                             &trans        &trans  &trans
             >;
 
