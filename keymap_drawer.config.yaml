@@ -117,44 +117,47 @@ parse_config:
     type: trans
 
   raw_binding_map:
-    # Layers
-    "&ltq 1 BACKSPACE":
-      tap:  $$mdi:backspace$$
-      hold: '$$mdi:navigation-variant$$'
-    "&ltq 3 TAB":
-      tap: $$mdi:keyboard-tab$$
-      hold: $$mdi:numeric$$
-    "&ltq 2 SPACE":
-      tap: $$mdi:keyboard-space$$
-      hold: $$mdi:symbol$$
-    "&ltq 3 ENTER":
-      tap: $$mdi:keyboard-return$$
-      hold: $$mdi:numeric$$
-    "&ltq 1 DELETE":
+    # RGB Layer Behaviors (thumb keys)
+    "&num_lt_del 0 DEL":
       tap: $$mdi:backspace-reverse-outline$$
-      hold: $$mdi:navigation-variant$$
-    # Home rows
-    "&hm LEFT_GUI A":
+      hold: NUMBER
+    "&fn_lt_enter 0 ENTER":
+      tap: $$mdi:keyboard-return$$
+      hold: Fn
+    "&mouse_lt_enter 0 0":
+      tap: $$mdi:apple-keyboard-option$$
+      hold: SYMBOLS
+    "&mouse_lt_exit 0 0":
+      tap: $$mdi:apple-keyboard-option$$
+      hold: SYMBOLS
+    
+    # Home Row Mods (HRMs) - Left hand
+    "&hml LCTRL A":
       tap: 'A'
-      shifted: $$mdi:apple-keyboard-command$$
-    "&hm LEFT_ALT S":
+      hold: $$mdi:apple-keyboard-control$$
+    "&hml LALT S":
       tap: 'S'
-      shifted: $$mdi:apple-keyboard-option$$
-    "&hm LEFT_CONTROL D":
+      hold: $$mdi:apple-keyboard-option$$
+    "&hml LGUI D":
       tap: 'D'
-      shifted: $$mdi:apple-keyboard-control$$
-    "&hm LEFT_SHIFT F":
+      hold: $$mdi:apple-keyboard-command$$
+    "&hml LSHFT F":
       tap: 'F'
-      shifted: $$mdi:apple-keyboard-shift$$
-    "&hm RIGHT_SHIFT J":
+      hold: $$mdi:apple-keyboard-shift$$
+    
+    # Home Row Mods (HRMs) - Right hand
+    "&hmr RSHFT J":
       tap: 'J'
-      shifted: $$mdi:apple-keyboard-shift$$
-    "&hm RIGHT_CONTROL K":
+      hold: $$mdi:apple-keyboard-shift$$
+    "&hmr RGUI K":
       tap: 'K'
-      shifted: $$mdi:apple-keyboard-control$$
-    "&hm RIGHT_ALT L":
+      hold: $$mdi:apple-keyboard-command$$
+    "&hmr RALT L":
       tap: 'L'
-      shifted: $$mdi:apple-keyboard-option$$
+      hold: $$mdi:apple-keyboard-option$$
+    "&hmr RCTRL SEMI":
+      tap: ';'
+      hold: $$mdi:apple-keyboard-control$$
     # self behaviors
     "&hm LG(LS(V)) P":
       tap: 'P'
