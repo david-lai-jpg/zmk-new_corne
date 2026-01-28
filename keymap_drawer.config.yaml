@@ -123,10 +123,10 @@ parse_config:
       hold: NUMBER
     "&fn_lt_enter 0 ENTER":
       tap: $$mdi:keyboard-return$$
-      hold: Fn
+      hold: SYMBOLS
     "&mouse_lt_enter 0 0":
       tap: $$mdi:apple-keyboard-option$$
-      hold: SYMBOLS
+      hold: Fn
     "&mouse_lt_exit 0 0":
       tap: $$mdi:apple-keyboard-option$$
       hold: SYMBOLS
