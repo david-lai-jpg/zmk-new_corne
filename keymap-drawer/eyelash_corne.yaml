@@ -56,7 +56,7 @@ layers:
   - {t: '8', s: '*'}
   - {t: '9', s: (}
   - {t: '0', s: )}
-  - F3
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:arrow-up-bold$$
@@ -69,9 +69,9 @@ layers:
   - {t: '5', s: '%'}
   - {t: '6', s: ^}
   - {t: '`', s: '~'}
-  - F1
   - {t: '$$mdi:transfer$$', type: trans}
-  - F2
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '{', s: '['}
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
@@ -85,7 +85,7 @@ layers:
   - {t: '3', s: '#'}
   - F12
   - $$mdi:play-pause$$
-  - F4
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '}', s: ']'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -96,7 +96,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   FN:
   - $$mdi:keyboard-esc$$
@@ -105,7 +105,7 @@ layers:
   - F8
   - F9
   - {t: '$$mdi:transfer$$', type: trans}
-  - F3
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:arrow-up-bold$$
@@ -118,9 +118,9 @@ layers:
   - F5
   - F6
   - {t: '`', s: '~'}
-  - F1
   - {t: '$$mdi:transfer$$', type: trans}
-  - F2
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '{', s: '['}
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
@@ -134,7 +134,7 @@ layers:
   - F3
   - F12
   - $$mdi:play-pause$$
-  - F4
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '}', s: ']'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -154,7 +154,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:arrow-up-bold$$
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -167,9 +167,9 @@ layers:
   - D
   - F
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:arrow-left-bold$$
-  - F3
-  - $$mdi:arrow-right-bold$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - J
   - K
@@ -183,7 +183,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:play-pause$$
-  - $$mdi:arrow-down-bold$$
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -203,7 +203,7 @@ layers:
   - '*'
   - (
   - )
-  - F3
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:arrow-up-bold$$
@@ -216,9 +216,9 @@ layers:
   - '%'
   - ^
   - {t: '`', s: '~'}
-  - F1
   - {t: '$$mdi:transfer$$', type: trans}
-  - F2
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '{', s: '['}
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
@@ -232,7 +232,7 @@ layers:
   - '#'
   - F12
   - $$mdi:play-pause$$
-  - F4
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '}', s: ']'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
