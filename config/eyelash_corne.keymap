@@ -243,7 +243,7 @@
         mouse_layer {
             display-name = "MOUSELESS";
             bindings = <
-&kp ESC     &trans  &trans  &trans     &trans  &trans                               &trans                &trans        &trans  &trans      &trans    &trans     &trans
+&kp ESC     &trans  &trans  &trans     &trans  &trans                               &trans                &kp LG(LS(N4))        &kp LG(LS(N5))  &trans      &kp LG(LS(N3))    &trans     &trans
 &trans     &kp A  &kp S  &kp D     &kp F  &trans                     &trans  &trans  &trans  &trans        &kp J  &kp K      &kp L    &kp SEMI  &trans
  &trans  &trans  &trans  &trans     &trans  &trans        &kp C_PP              &trans              &trans        &trans  &trans  &trans  &trans  &trans
                          &trans  &trans  &trans                                              &kp ENTER  &kp BSPC  &mouse_lt_exit 0 0

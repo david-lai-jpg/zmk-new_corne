@@ -524,6 +524,17 @@ parse_config:
       tap: $$mdi:video$$
       hold: zoom
 
+    # Mac Screenshot shortcuts
+    LG(LS(N3)):
+      tap: '⌘⇧3'
+      shifted: 'Full'
+    LG(LS(N4)):
+      tap: '⌘⇧4'
+      shifted: 'Select'
+    LG(LS(N5)):
+      tap: '⌘⇧5'
+      shifted: 'Options'
+
   zmk_combos:
     combo_to_2:
       align: top
