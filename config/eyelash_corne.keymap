@@ -122,7 +122,7 @@
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
-        tap-ms = <0>;
+        tap-ms = <20>;
     };
 
     media_encoder: media_encoder {
