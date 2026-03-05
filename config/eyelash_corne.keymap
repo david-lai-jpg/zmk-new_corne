@@ -123,6 +123,14 @@
         tap-ms = <100>;
     };
 
+    scroll_encoder_rev: scroll_encoder_rev {
+        compatible = "zmk,behavior-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
+        tap-ms = <100>;
+    };
+
     media_encoder: media_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
@@ -213,7 +221,7 @@
                          &kp LALT  &kp LGUI  &kp SPACE                                               &fn_lt_enter 0 ENTER  &num_lt 1 BSPC  &mouse_lt_enter 0 0
             >;
 
-             sensor-bindings = <&scroll_encoder>;
+             sensor-bindings = <&scroll_encoder_rev>;
         };
 
         lower_layer {
