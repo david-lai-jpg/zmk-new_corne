@@ -15,8 +15,8 @@
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
-    acceleration-exponent = <0>;      // 0: constant speed, 1: linear ramp
-    time-to-max-speed-ms = <300>;     // 300
+    acceleration-exponent = <1>;      // 0
+    time-to-max-speed-ms = <100>;       // 300
     delay-ms = <0>;                   // 0
 };
 
@@ -25,8 +25,6 @@
     acceleration-exponent = <1>;
     trigger-period-ms = <16>;
 };
-
-/ { sensors { triggers-per-rotation = <15>; }; };
 
 &soft_off { hold-time-ms = <2000>; };
 
@@ -122,7 +120,7 @@
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
-        tap-ms = <20>;
+        tap-ms = <50>;
     };
 
     media_encoder: media_encoder {
