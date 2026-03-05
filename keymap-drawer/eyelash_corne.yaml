@@ -136,11 +136,11 @@ layers:
   - $$mdi:play-pause$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '}', s: ']'}
-  - {t: BT 1, type: bt}
-  - {t: BT 2, type: bt}
-  - {t: BT 3, type: bt}
-  - {t: BT 4, type: bt}
-  - {t: BT CLR, type: bt}
+  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '4', s: '$$mdi:bluetooth-connect$$'}
+  - $$mdi:bluetooth-off$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
