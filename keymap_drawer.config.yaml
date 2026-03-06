@@ -139,6 +139,18 @@ parse_config:
       tap: BASE
       hold: ''
       shifted: $$mdi:keyboard-return$$
+    "&to 5":
+      tap: '600'
+      shifted: $$mdi:mouse$$
+    "&ipad_speed_300":
+      tap: '300'
+      shifted: $$mdi:mouse$$
+    "&ipad_speed_1200":
+      tap: '1200'
+      shifted: $$mdi:mouse$$
+    "&ipad_speed_2400":
+      tap: '2400'
+      shifted: $$mdi:mouse$$
     
     # Home Row Mods (HRMs) - Left hand
     "&hml LCTRL A":
