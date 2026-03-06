@@ -283,8 +283,8 @@ layers:
   - $$mdi:play-pause$$
   - {t: H, s: Home}
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:pan-down$$
   - $$mdi:pan-up$$
+  - $$mdi:pan-down$$
   - $$mdi:pan-left$$
   - $$mdi:pan-right$$
   - {t: '$$mdi:transfer$$', type: trans}
