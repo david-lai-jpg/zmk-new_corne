@@ -48,7 +48,7 @@ layers:
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', h: SYMBOLS}
   - {t: '$$mdi:backspace$$', h: NUMBER}
-  - '&td_mouse_ipad'
+  - {t: MOUSE, h: Fn, s: 2x IPAD, type: tap_dance}
   NUMBER:
   - $$mdi:keyboard-esc$$
   - {t: '-', s: _}
@@ -293,4 +293,4 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-right-click-outline$$
-  - {t: BASE, h: toggle}
+  - {t: BASE, s: '$$mdi:keyboard-return$$'}
