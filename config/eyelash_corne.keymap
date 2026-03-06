@@ -13,21 +13,21 @@
 &mmv_input_listener {
     input-processors = <&zip_xy_scaler 2 1>;
 
-    ipad_300 {
+    ipad_600 {
         layers = <6>;
-        input-processors = <&zip_xy_scaler 1 4>;
-    };
-    ipad_1200 {
-        layers = <7>;
-        input-processors = <&zip_xy_scaler 1 1>;
+        input-processors = <&zip_xy_scaler 1 2>;
     };
     ipad_2400 {
-        layers = <8>;
+        layers = <7>;
         input-processors = <&zip_xy_scaler 2 1>;
+    };
+    ipad_4800 {
+        layers = <8>;
+        input-processors = <&zip_xy_scaler 4 1>;
     };
     ipad_default {
         layers = <5>;
-        input-processors = <&zip_xy_scaler 1 2>;
+        input-processors = <&zip_xy_scaler 1 1>;
     };
 };
 
@@ -223,7 +223,7 @@
             bindings = <&to 5>;
         };
 
-        ipad_speed_300: ipad_speed_300 {
+        ipad_speed_600: ipad_speed_600 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
@@ -231,7 +231,7 @@
             bindings = <&to 5>, <&tog 6>;
         };
 
-        ipad_speed_1200: ipad_speed_1200 {
+        ipad_speed_2400: ipad_speed_2400 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
@@ -239,12 +239,52 @@
             bindings = <&to 5>, <&tog 7>;
         };
 
-        ipad_speed_2400: ipad_speed_2400 {
+        ipad_speed_4800: ipad_speed_4800 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
             bindings = <&to 5>, <&tog 8>;
+        };
+
+        globe_up: globe_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <10>;
+            bindings = <&macro_press &kp CAPS>, <&macro_tap &kp UP>, <&macro_release &kp CAPS>;
+        };
+
+        globe_left: globe_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <10>;
+            bindings = <&macro_press &kp CAPS>, <&macro_tap &kp LEFT>, <&macro_release &kp CAPS>;
+        };
+
+        globe_n: globe_n {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <10>;
+            bindings = <&macro_press &kp CAPS>, <&macro_tap &kp N>, <&macro_release &kp CAPS>;
+        };
+
+        globe_right: globe_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <10>;
+            bindings = <&macro_press &kp CAPS>, <&macro_tap &kp RIGHT>, <&macro_release &kp CAPS>;
+        };
+
+        globe_h: globe_h {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <10>;
+            bindings = <&macro_press &kp CAPS>, <&macro_tap &kp H>, <&macro_release &kp CAPS>;
         };
 
         sym_layer_color: sym_layer_color {
@@ -324,27 +364,16 @@
         ipad_layer {
             display-name = "IPAD";
             bindings = <
-&kp ESC  &trans  &trans  &trans  &trans  &trans                               &trans                &trans             &trans          &mmv MOVE_UP    &trans           &trans  &trans
-&trans   &ipad_speed_300  &to 5  &ipad_speed_1200  &ipad_speed_2400  &trans                  &trans  &trans  &trans  &trans             &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp SEMI  &trans
- &trans  &trans  &trans  &trans  &trans  &trans        &kp C_PP              &trans              &trans             &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_LEFT   &msc SCRL_RIGHT  &trans
+&kp ESC  &trans  &trans  &trans  &trans  &trans                               &globe_up             &trans             &trans          &mmv MOVE_UP    &trans           &trans  &trans
+&trans   &ipad_speed_600  &to 5  &ipad_speed_2400  &ipad_speed_4800  &trans                  &globe_left  &globe_n  &globe_right  &trans             &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp SEMI  &trans
+ &trans  &trans  &trans  &trans  &trans  &trans        &kp C_PP              &globe_h              &trans             &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_LEFT   &msc SCRL_RIGHT  &trans
                          &trans  &trans  &trans                                                             &mkp LCLK      &mkp RCLK       &to 0
             >;
             sensor-bindings = <&scroll_encoder>;
         };
 
-        ipad_300_layer {
-            display-name = "IPAD_300";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                               &trans                &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans        &trans              &trans              &trans  &trans  &trans  &trans  &trans  &trans
-                         &trans  &trans  &trans                                                             &trans  &trans  &trans
-            >;
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-        ipad_1200_layer {
-            display-name = "IPAD_1200";
+        ipad_600_layer {
+            display-name = "IPAD_600";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                               &trans                &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -356,6 +385,17 @@
 
         ipad_2400_layer {
             display-name = "IPAD_2400";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                               &trans                &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &trans  &trans  &trans  &trans  &trans        &trans              &trans              &trans  &trans  &trans  &trans  &trans  &trans
+                         &trans  &trans  &trans                                                             &trans  &trans  &trans
+            >;
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        ipad_4800_layer {
+            display-name = "IPAD_4800";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                               &trans                &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans

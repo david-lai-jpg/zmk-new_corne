@@ -27,10 +27,10 @@ Add any new custom bindings to `keymap_drawer.config.yaml` → `raw_binding_map`
 | 2     | FN        | Function keys + BT                                                 |
 | 3     | MOUSELESS | Vimium-style nav (toggled)                                         |
 | 4     | SYMBOLS   | Symbol layer                                                       |
-| 5     | IPAD      | Mouse/scroll for iPad (effective 600 cursor speed)                 |
-| 6     | IPAD_300  | Speed overlay — empty layer, activates 300 effective cursor speed  |
-| 7     | IPAD_1200 | Speed overlay — empty layer, activates 1200 effective cursor speed |
-| 8     | IPAD_2400 | Speed overlay — empty layer, activates 2400 effective cursor speed |
+| 5     | IPAD      | Mouse/scroll for iPad (effective 1200 cursor speed, default)       |
+| 6     | IPAD_600  | Speed overlay — empty layer, activates 600 effective cursor speed  |
+| 7     | IPAD_2400 | Speed overlay — empty layer, activates 2400 effective cursor speed |
+| 8     | IPAD_4800 | Speed overlay — empty layer, activates 4800 effective cursor speed |
 
 ## IPAD Speed Layer Architecture
 
@@ -41,16 +41,16 @@ Cursor speed is controlled via **per-layer input processor overrides** on `&mmv_
 - `ZMK_POINTING_DEFAULT_MOVE_VAL = 1200`
 - `&mmv_input_listener` has per-layer `zip_xy_scaler` overrides
 - Speed layers are checked first (higher priority), IPAD default last
-- Entering IPAD via double-tap on BASE key 47 → `&to 5` → only layer 5 active → 600 effective
+- Entering IPAD via double-tap on BASE key 47 → `&to 5` → only layer 5 active → 1200 effective
 - Keys 14-17 on IPAD layer switch speeds via macros (`&to 5` + `&tog N`)
 
 **Scaler math:**
 | Layer | Scaler | Calculation | Effective |
 |-------|--------|-------------|-----------|
-| IPAD (5) | `1 2` | 1200 × 0.5 | 600 |
-| IPAD_300 (6) | `1 4` | 1200 × 0.25 | 300 |
-| IPAD_1200 (7) | `1 1` | 1200 × 1 | 1200 |
-| IPAD_2400 (8) | `2 1` | 1200 × 2 | 2400 |
+| IPAD (5) | `1 1` | 1200 × 1 | 1200 |
+| IPAD_600 (6) | `1 2` | 1200 × 0.5 | 600 |
+| IPAD_2400 (7) | `2 1` | 1200 × 2 | 2400 |
+| IPAD_4800 (8) | `4 1` | 1200 × 4 | 4800 |
 
 **When modifying the IPAD layer layout, you only need to edit layer 5.** Speed layers 6-8 are all `&trans` and don't need changes unless adding/removing speed tiers.
 
@@ -59,7 +59,7 @@ Cursor speed is controlled via **per-layer input processor overrides** on `&mmv_
 `td_mouse_ipad` (tap-dance wrapping hold-tap):
 
 - Single tap → MOUSELESS (via `mouse_lt_enter` → tap → `mouse_tog_enter`)
-- Double tap → IPAD (`&to 5`, effective 600 cursor speed)
+- Double tap → IPAD (`&to 5`, effective 1200 cursor speed)
 - Hold → FN (250ms td + 200ms ht = ~450ms total delay)
 
 ## Encoder

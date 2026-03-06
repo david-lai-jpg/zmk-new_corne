@@ -140,17 +140,32 @@ parse_config:
       hold: ''
       shifted: $$mdi:keyboard-return$$
     "&to 5":
-      tap: '600'
-      shifted: $$mdi:mouse$$
-    "&ipad_speed_300":
-      tap: '300'
-      shifted: $$mdi:mouse$$
-    "&ipad_speed_1200":
       tap: '1200'
+      shifted: $$mdi:mouse$$
+    "&ipad_speed_600":
+      tap: '600'
       shifted: $$mdi:mouse$$
     "&ipad_speed_2400":
       tap: '2400'
       shifted: $$mdi:mouse$$
+    "&ipad_speed_4800":
+      tap: '4800'
+      shifted: $$mdi:mouse$$
+    "&globe_up":
+      tap: $$mdi:arrow-up-bold$$
+      shifted: Mission Ctrl
+    "&globe_left":
+      tap: $$mdi:arrow-left-bold$$
+      shifted: Prev App
+    "&globe_n":
+      tap: 'N'
+      shifted: Globe
+    "&globe_right":
+      tap: $$mdi:arrow-right-bold$$
+      shifted: Next App
+    "&globe_h":
+      tap: 'H'
+      shifted: Home
     
     # Home Row Mods (HRMs) - Left hand
     "&hml LCTRL A":
