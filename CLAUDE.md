@@ -20,23 +20,24 @@ Add any new custom bindings to `keymap_drawer.config.yaml` → `raw_binding_map`
 
 ## Layer Architecture
 
-| Index | Name | Purpose |
-|-------|------|---------|
-| 0 | BASE | Default QWERTY |
-| 1 | NUMBER | Numpad + nav |
-| 2 | FN | Function keys + BT |
-| 3 | MOUSELESS | Vimium-style nav (toggled) |
-| 4 | SYMBOLS | Symbol layer |
-| 5 | IPAD | Mouse/scroll for iPad (effective 600 cursor speed) |
-| 6 | IPAD_300 | Speed overlay — empty layer, activates 300 effective cursor speed |
-| 7 | IPAD_1200 | Speed overlay — empty layer, activates 1200 effective cursor speed |
-| 8 | IPAD_2400 | Speed overlay — empty layer, activates 2400 effective cursor speed |
+| Index | Name      | Purpose                                                            |
+| ----- | --------- | ------------------------------------------------------------------ |
+| 0     | BASE      | Default QWERTY                                                     |
+| 1     | NUMBER    | Numpad + nav                                                       |
+| 2     | FN        | Function keys + BT                                                 |
+| 3     | MOUSELESS | Vimium-style nav (toggled)                                         |
+| 4     | SYMBOLS   | Symbol layer                                                       |
+| 5     | IPAD      | Mouse/scroll for iPad (effective 600 cursor speed)                 |
+| 6     | IPAD_300  | Speed overlay — empty layer, activates 300 effective cursor speed  |
+| 7     | IPAD_1200 | Speed overlay — empty layer, activates 1200 effective cursor speed |
+| 8     | IPAD_2400 | Speed overlay — empty layer, activates 2400 effective cursor speed |
 
 ## IPAD Speed Layer Architecture
 
 Cursor speed is controlled via **per-layer input processor overrides** on `&mmv_input_listener`, NOT by duplicating cursor key bindings. The speed overlay layers (6-8) are completely empty (all `&trans`) — they exist solely as "tags" for the input processor system.
 
 **How it works:**
+
 - `ZMK_POINTING_DEFAULT_MOVE_VAL = 1200`
 - `&mmv_input_listener` has per-layer `zip_xy_scaler` overrides
 - Speed layers are checked first (higher priority), IPAD default last
@@ -56,6 +57,7 @@ Cursor speed is controlled via **per-layer input processor overrides** on `&mmv_
 ## BASE Key 47 Behavior
 
 `td_mouse_ipad` (tap-dance wrapping hold-tap):
+
 - Single tap → MOUSELESS (via `mouse_lt_enter` → tap → `mouse_tog_enter`)
 - Double tap → IPAD (`&to 5`, effective 600 cursor speed)
 - Hold → FN (250ms td + 200ms ht = ~450ms total delay)
