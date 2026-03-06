@@ -107,6 +107,13 @@
             tapping-term-ms = <200>;
             bindings = <&sym_layer_color>, <&mouse_tog_exit>;
         };
+
+        td_mouse_ipad: td_mouse_ipad {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <175>;
+            bindings = <&mouse_lt_enter 0 0>, <&ipad_tog_enter>;
+        };
     };
 
     rgb_encoder: rgb_encoder {
@@ -189,6 +196,14 @@
                 , <&kp RALT>;
         };
 
+        ipad_tog_enter: ipad_tog_enter {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&to 5>;
+        };
+
         sym_layer_color: sym_layer_color {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -210,7 +225,7 @@
  &kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                               &kp F3                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp EQUAL
 &td0       &hml LCTRL A  &hml LALT S  &hml LGUI D     &hml LSHFT F  &kp G                     &kp F1  &kp F12  &kp F2  &kp H        &hmr RSHFT J  &hmr RGUI K      &hmr RALT L    &hmr RCTRL SEMI  &kp SQT
  &kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp C_PP              &kp F4              &kp N        &kp M  &kp COMMA  &kp DOT   &kp FSLH  &kp BSLH
-                         &kp LALT  &kp LGUI  &kp SPACE                                               &fn_lt_enter 0 ENTER  &num_lt 1 BSPC  &mouse_lt_enter 0 0
+                         &kp LALT  &kp LGUI  &kp SPACE                                               &fn_lt_enter 0 ENTER  &num_lt 1 BSPC  &td_mouse_ipad
             >;
 
              sensor-bindings = <&scroll_encoder>;
@@ -261,6 +276,17 @@
             >;
 
             sensor-bindings = <&volume_encoder>;
+        };
+
+        ipad_layer {
+            display-name = "IPAD";
+            bindings = <
+&kp ESC  &trans  &trans  &trans  &trans  &trans                               &trans                &trans             &trans          &mmv MOVE_UP    &trans           &trans  &trans
+&trans   &kp A   &kp S   &kp D   &kp F   &trans                  &trans  &trans  &trans  &trans             &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp SEMI  &trans
+ &trans  &trans  &trans  &trans  &trans  &trans        &kp C_PP              &trans              &trans             &msc SCRL_DOWN  &msc SCRL_UP    &trans           &msc SCRL_LEFT  &msc SCRL_RIGHT
+                         &trans  &trans  &trans                                                             &mkp LCLK      &mkp RCLK       &to 0
+            >;
+            sensor-bindings = <&scroll_encoder>;
         };
     };
 };
