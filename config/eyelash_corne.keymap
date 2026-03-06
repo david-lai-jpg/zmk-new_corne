@@ -366,7 +366,7 @@
             bindings = <
 &kp ESC  &trans  &trans  &trans  &trans  &trans                               &globe_up             &trans             &trans          &mmv MOVE_UP    &trans           &trans  &trans
 &trans   &ipad_speed_600  &to 5  &ipad_speed_2400  &ipad_speed_4800  &trans                  &globe_left  &globe_n  &globe_right  &trans             &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp SEMI  &trans
- &trans  &trans  &trans  &trans  &trans  &trans        &kp C_PP              &globe_h              &trans             &msc SCRL_UP  &msc SCRL_DOWN    &msc SCRL_LEFT   &msc SCRL_RIGHT  &trans
+ &trans  &trans  &trans  &trans  &trans  &trans        &kp C_PP              &globe_h              &trans             &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_LEFT   &msc SCRL_RIGHT  &trans
                          &trans  &trans  &trans                                                             &mkp LCLK      &mkp RCLK       &to 0
             >;
             sensor-bindings = <&scroll_encoder>;
