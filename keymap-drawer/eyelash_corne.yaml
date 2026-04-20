@@ -47,7 +47,7 @@ layers:
   - LGUI
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', h: SYMBOLS}
-  - {t: '$$mdi:backspace$$', h: NUMBER, s: 2x Hold, type: tap_dance}
+  - {t: '$$mdi:backspace$$', h: NUMBER}
   - {t: MOUSE, h: Fn, s: 2x IPAD, type: tap_dance}
   NUMBER:
   - $$mdi:keyboard-esc$$
@@ -96,7 +96,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   FN:
   - $$mdi:keyboard-esc$$

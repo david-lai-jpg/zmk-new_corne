@@ -127,11 +127,6 @@ parse_config:
     "&mouse_lt_enter 0 0":
       tap: $$mdi:apple-keyboard-option$$
       hold: Fn
-    "&td_bspc_num":
-      tap: $$mdi:backspace$$
-      hold: NUMBER
-      shifted: 2x Hold
-      type: tap_dance
     "&td_mouse_ipad":
       tap: MOUSE
       hold: Fn
