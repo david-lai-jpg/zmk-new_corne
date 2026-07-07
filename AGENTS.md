@@ -38,4 +38,4 @@ Add any new custom bindings to `keymap_drawer.config.yaml` → `raw_binding_map`
 ## Encoder
 
 EC11 encoder on left half. `steps = <15>`, board default `triggers-per-rotation = <15>`.
-Scroll encoder uses `&msc MOVE_Y(140)` / `MOVE_Y(-140)` with `tap-ms = <20>` so encoder taps survive the `&msc` 16ms input tick without reintroducing global scroll scaling or acceleration.
+Scroll encoder uses `&msc MOVE_Y(-140)` / `MOVE_Y(140)` with `tap-ms = <20>` so encoder taps survive the `&msc` 16ms input tick without reintroducing global scroll scaling or acceleration.
