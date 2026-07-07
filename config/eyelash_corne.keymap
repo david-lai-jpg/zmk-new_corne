@@ -99,7 +99,8 @@
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        bindings = <&msc MOVE_Y(140)>, <&msc MOVE_Y(-140)>;
+        tap-ms = <20>;
     };
 
     media_encoder: media_encoder {

@@ -166,11 +166,11 @@ parse_config:
       tap: 'P'
       shifted: $$mdi:content-copy$$
     # Mouse
-    "&msc SCRL_UP":
+    "&msc MOVE_Y(140)":
       tap: $$mdi:pan-up$$
       hold: ''
       shifted: ''
-    "&msc SCRL_DOWN":
+    "&msc MOVE_Y(-140)":
       tap: $$mdi:pan-down$$
       hold: ''
       shifted: ''
