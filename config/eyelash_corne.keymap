@@ -1,21 +1,9 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
-
-#include <input/processors.dtsi>
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
-
-&msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
-
-&msc {
-    acceleration-exponent = <1>;      // 0
-    time-to-max-speed-ms = <100>;       // 300
-    delay-ms = <0>;                   // 0
-};
 
 &soft_off { hold-time-ms = <2000>; };
 
@@ -112,8 +100,6 @@
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-
-        tap-ms = <30>;
     };
 
     media_encoder: media_encoder {

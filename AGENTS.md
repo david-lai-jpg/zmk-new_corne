@@ -37,5 +37,5 @@ Add any new custom bindings to `keymap_drawer.config.yaml` → `raw_binding_map`
 
 ## Encoder
 
-EC11 encoder on left half. `steps = <15>`, board default `triggers-per-rotation = <60>`.
-Scroll encoder uses `&msc` with `tap-ms = <30>`.
+EC11 encoder on left half. `steps = <15>`, board default `triggers-per-rotation = <15>`.
+Scroll encoder uses stock `&msc` scroll constants; do not stack custom scroll value, input scaling, acceleration, or long `tap-ms` unless deliberately retuning from hardware evidence.
